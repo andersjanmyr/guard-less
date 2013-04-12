@@ -87,6 +87,7 @@ module Guard
       true
     rescue Exception => e
       UI.info "Guard::Less: Compiling #{lessfile} failed with message: #{e.message}"
+      Notifier.notify("Failed", :title => "Less Failed", :image => :failed, :priority => 2)
       false
     end
 
